@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <table>
+        <tr>
+            <td>序号</td>
+            <td>name</td>
+            <td>age</td>
+        </tr>
+        <tr v-for="(user,i) in users" :key="i">
+            <td>{{i+1}}</td>
+            <!--<td v-for="value in user">{{value}}</td>-->
+            <td>{{user.name}}</td>
+            <td>{{user.age}}</td>
+        </tr>
+    </table>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+ var vm= new Vue({
+     el: "#app",
+     data:{
+         users : [
+             {
+                 name: "steve1",
+                 age: 10
+             },
+             {
+                 name: "steve2",
+                 age: 11
+             },
+             {
+                 name: "steve3",
+                 age: 12
+             },
+         ]
+     }
+ });
+</script>
+</html>

@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+    "pid": 2001,
+    "pname": "p30",
+    "price": 4899
+    },
+    {
+      "pid": 2002,
+      "pname": "iphonex",
+      "price": 5900
+    },
+    {
+      "pid": 2003,
+      "pname": "nokia",
+      "price": 788
+    }
+  ]
+}

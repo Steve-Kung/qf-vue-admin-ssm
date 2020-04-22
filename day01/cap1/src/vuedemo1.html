@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <span>
+        {{title}}
+    </span>
+    <!--双向绑定-->
+    <input type="text" v-model="title">
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+//    <!-- Vue函数里是一个json对象 -->
+//json格式的对象使用大括号包裹，里面放了键值对
+// ，在js中键可以没有引号，多个键值对之间使用，’分隔。
+    var vm = new Vue({
+        el: "#app",
+        data:{
+            title: "hello, vue", // 以后，数据就是通过发送ajax请求，来获得的。|
+
+        }
+    });
+</script>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/day01/day01.iml" filepath="$PROJECT_DIR$/day01/day01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day02/day02.iml" filepath="$PROJECT_DIR$/day02/day02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day03/day03.iml" filepath="$PROJECT_DIR$/day03/day03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day04/day04.iml" filepath="$PROJECT_DIR$/day04/day04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day05/day05.iml" filepath="$PROJECT_DIR$/day05/day05.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day06/day06.iml" filepath="$PROJECT_DIR$/day06/day06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day07/day07.iml" filepath="$PROJECT_DIR$/day07/day07.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day08wxpay/day08wxpay.iml" filepath="$PROJECT_DIR$/day08wxpay/day08wxpay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qf.iml" filepath="$PROJECT_DIR$/qf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vuessm/vuessm.iml" filepath="$PROJECT_DIR$/vuessm/vuessm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wx-pay-ssm/wx-pay-ssm.iml" filepath="$PROJECT_DIR$/wx-pay-ssm/wx-pay-ssm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wxpaydemo/wxpaydemo.iml" filepath="$PROJECT_DIR$/wxpaydemo/wxpaydemo.iml" />
+    </modules>
+  </component>
+</project>

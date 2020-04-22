@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stevekung.mapper.ProductMapper">
+    <delete id="deleteByPrimaryKey" parameterType="long">
+        DELETE FROM t_product WHERE id = #{id}
+    </delete>
+    <insert id="insert" parameterType="Product">
+        insert into t_product (name, images, price, sale_price, sale_point, type_id, type_name, create_user, update_user) values (#{name}, #{images}, #{price}, #{salePrice}, #{salePoint}, #{typeId}, #{typeName}, #{createUser}, #{updateUser});
+    </insert>
+    <insert id="insertSelective" parameterType="Product">
+        insert into t_product (name, images, price, sale_price, sale_point, type_id, type_name, create_user, update_user) values (#{name}, #{images}, #{price}, #{salePrice}, #{salePoint}, #{typeId}, #{typeName}, #{createUser}, #{updateUser});
+    </insert>
+    <select id="selectByPrimaryKey" resultType="Product">
+        select * from t_product WHERE id = #{id};
+    </select>
+    <update id="updateByPrimaryKeySelective" parameterType="Product">
+        update t_product set name=#{name}, images=#{images}, price=#{price}, sale_price=#{salePrice}, sale_point=#{salePoint}, type_id=#{typeId}, type_name=#{typeName}, create_user=#{createUser}, update_user=#{updateUser}  where id=#{id};
+    </update>
+    <update id="updateByPrimaryKey" parameterType="Product">
+        update t_product set name=#{name}, images=#{images}, price=#{price}, sale_price=#{salePrice}, sale_point=#{salePoint}, type_id=#{typeId}, type_name=#{typeName}, create_user=#{createUser}, update_user=#{updateUser}  where id=#{id};
+    </update>
+    <select id="selectProducts" resultType="Product">
+        select * from t_product
+    </select>
+</mapper>
