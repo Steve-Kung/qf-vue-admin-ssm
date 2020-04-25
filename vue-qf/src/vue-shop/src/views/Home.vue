@@ -94,7 +94,7 @@
 <style scoped>
   .product{
     display: inline-block;
-    width: 100%;
+    width: 50%;
     /*border: solid gray 1px;*/
   }
   .product img{
