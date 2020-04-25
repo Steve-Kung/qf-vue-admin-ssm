@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stevekung.mapper.CartMapper">
+    <select id="getCartByUserId" resultType="Cart">
+        select * from qfsc.t_cart WHERE user_id = #{userId}
+    </select>
+
+    <update id="updateById" parameterType="Cart">
+        update qfsc.t_cart set cart_id =#{cartId}, user_id=#{userId},pid=#{pid},pcount=#{pcount}  where id =#{id};
+    </update>
+
+    <insert id="addCart" parameterType="Cart">
+        insert into qfsc.t_cart (cart_id, user_id, pid, pcount) values (#{cartId}, #{userId}, #{pid}, #{pcount});
+    </insert>
+
+    <select id="getCartVOByUserId" resultType="CartVO">
+        SELECT
+          t1.cart_id,
+          t1.user_id,
+          t1.pid,
+          t2.pname,
+          t2.price,
+          t1.pcount
+        FROM
+          t_cart as t1
+        INNER JOIN
+          t_product as t2
+        on
+          t1.pid = t2.pid
+        WHERE
+          user_id=#{userId};
+    </select>
+
+</mapper>

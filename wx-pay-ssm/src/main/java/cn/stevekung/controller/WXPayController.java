@@ -28,8 +28,8 @@ import java.util.Map;
 @Controller
 public class WXPayController {
 
-    private String orderId = null;
-    private String product_id = null;
+//    private String orderId = null;
+//    private String productId = null;
 
     @RequestMapping("/showPay")
     public String showPay(Model model){
@@ -38,8 +38,8 @@ public class WXPayController {
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
         String orderIdPrefix = sdf.format(date);
-        product_id = "00001"; // 1号商品
-        orderId = orderIdPrefix + product_id;
+        String productId = "00001"; // 1号商品
+        String orderId = orderIdPrefix + productId;
 
         //  隧道名可以使用订单编号
         // 订单编号是唯一的
@@ -68,29 +68,39 @@ public class WXPayController {
 
 //    编写下单接口
     @RequestMapping("/doPay")
-    public void dopay(HttpServletResponse response) throws Exception {
+    public void dopay(Long orderId,Long pid, Long orderPrice,HttpServletResponse response) throws Exception {
 //        // 用于生成订单辅号的随机数
 //        Date date = new Date();
 //        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
 //        String orderIdPrefix = sdf.format(date);
-//        String product_id = "00001"; // 1号商品
-//        String orderId = orderIdPrefix + product_id;
+//        String productId = "00001"; // 1号商品
+//        String orderId = orderIdPrefix + productId;
 
+        // 用于生成订单辅号的随机数
+//        Date date = new Date();
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
+//        String orderIdPrefix = sdf.format(date);
+//        productId = "00001"; // 1号商品
+//        orderId = orderIdPrefix + productId;
 
+//        this.orderId = String.valueOf(orderId);
+
+        //1.创建配置类对象
         MyWXPayConfig config = new MyWXPayConfig();
         WXPay wxpay = new WXPay(config);
 
         Map<String, String> data = new HashMap<String, String>();
         data.put("body", "付款显示账单标题"); // 付款显示账单标题
-        data.put("out_trade_no", orderId);// 订单编号
+        data.put("out_trade_no", String.valueOf(orderId));// 订单编号
         data.put("device_info", "");// 设备信息
         data.put("fee_type", "CNY");// 货币单位 分
+//        data.put("total_fee", String.valueOf(orderPrice));// 金额
         data.put("total_fee", "1");// 金额
         data.put("spbill_create_ip", "123.12.12.123");
 //        需要有一个回调的接口，获取此次微信支付的信息
-        data.put("notify_url", "http://dwd9xa.natappfree.cc/notify_url"); // 回调地址
+        data.put("notify_url", "http://gasxa3.natappfree.cc/notify_url"); // 回调地址
         data.put("trade_type", "NATIVE");  // 此处指定为扫码支付
-        data.put("product_id", product_id); // 商品ID 与订单编号后几位相同？
+        data.put("product_id", String.valueOf(pid)); // 商品ID 与订单编号后几位相同？
 
         try {
             Map<String, String> resp = wxpay.unifiedOrder(data);
@@ -118,7 +128,27 @@ public class WXPayController {
 
 //    返回正确回答消息给微信后台
     @RequestMapping("/notify_url")
-    public void getNotifyURL(HttpServletResponse response) throws IOException {
+    public void getNotifyURL(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        ServletInputStream inputStream = request.getInputStream();
+        byte[] b  =new byte[1024];
+        int len=0;
+        StringBuffer sb = new StringBuffer();
+        while ((len=inputStream.read(b))!=-1){
+            String str = new String(b,0,len);
+            sb.append(str);
+        }
+        System.out.println(sb.toString());
+        String sbStr = sb.toString();
+        int count = "<out_trade_no><![CDATA[".length();
+        int begin = sbStr.indexOf("<out_trade_no><![CDATA[");
+        int end = sbStr.indexOf("]]></out_trade_no>");
+        String substring = sbStr.substring(begin+count, end);
+        System.out.println(substring);
+
+        String orderId = substring;
+
+
         // 返回一个标准格式的回信给微信后台
         response.getWriter().write("<xml><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[OK]]></return_msg></xml>");
 //  用Java在服务器端发送消息

@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/day07/day07.iml" filepath="$PROJECT_DIR$/day07/day07.iml" />
       <module fileurl="file://$PROJECT_DIR$/day08wxpay/day08wxpay.iml" filepath="$PROJECT_DIR$/day08wxpay/day08wxpay.iml" />
       <module fileurl="file://$PROJECT_DIR$/qf.iml" filepath="$PROJECT_DIR$/qf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vue-qf/vue-qf.iml" filepath="$PROJECT_DIR$/vue-qf/vue-qf.iml" />
       <module fileurl="file://$PROJECT_DIR$/vuessm/vuessm.iml" filepath="$PROJECT_DIR$/vuessm/vuessm.iml" />
       <module fileurl="file://$PROJECT_DIR$/wx-pay-ssm/wx-pay-ssm.iml" filepath="$PROJECT_DIR$/wx-pay-ssm/wx-pay-ssm.iml" />
       <module fileurl="file://$PROJECT_DIR$/wxpaydemo/wxpaydemo.iml" filepath="$PROJECT_DIR$/wxpaydemo/wxpaydemo.iml" />

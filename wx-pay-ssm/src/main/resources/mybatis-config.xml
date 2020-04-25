@@ -13,6 +13,7 @@
     <!--别名-->
     <typeAliases>
         <package name="cn.stevekung.pojo"/>
+        <package name="cn.stevekung.vo"/>
     </typeAliases>
 
     <!--
@@ -45,8 +46,9 @@
     <!--</environment>-->
     <!--</environments>-->
 
-    <!--<mappers>-->
-        <!--&lt;!&ndash;<mapper class="cn.stevekung.mapper.UserMapper"/>&ndash;&gt;-->
-    <!--</mappers>-->
+    <mappers>
+        <package name="cn.stevekung.mapper"/>
+        <!--<mapper class="cn.stevekung.mapper.ProductMapper"/>-->
+    </mappers>
 
 </configuration>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stevekung.mapper.UserMapper">
+    <select id="getUserTels" resultType="String">
+        select user_tel from qfsc.t_user
+    </select>
+
+    <select id="getUserByuserTel" resultType="User">
+        select * from qfsc.t_user WHERE user_tel = #{userTel}
+    </select>
+
+    <select id="getUserByUserTelAndUserPwd" resultType="User" parameterType="map">
+        select * from qfsc.t_user
+        WHERE user_tel = #{userTel} and user_pwd = #{userPwd}
+    </select>
+
+</mapper>

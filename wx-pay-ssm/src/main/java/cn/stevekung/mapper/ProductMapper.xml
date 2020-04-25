@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stevekung.mapper.ProductMapper">
+    <select id="getAllProduct" resultType="Product">
+        SELECT * from qfsc.t_product
+    </select>
+    <select id="getProductById" resultType="Product">
+        SELECT * from qfsc.t_product WHERE id = #{id}
+    </select>
+    <insert id="addProduct" parameterType="Product">
+        insert into qfsc.t_product (pid, pname, price,pimg) values (#{pid}, #{pname},#{price},#{pimg})
+    </insert>
+    <delete id="deleteProductById">
+        DELETE from qfsc.t_product WHERE id=#{id}
+    </delete>
+    <update id="updateProduct" parameterType="Product">
+        update qfsc.t_product set pid = #{pid}, pname = #{pname}, price = #{price}, pimg=#{pimg}  where id=#{id} ;
+    </update>
+
+    <select id="getProductByPid" resultType="Product">
+        select * from qfsc.t_product where pid = #{pid};
+    </select>
+
+</mapper>

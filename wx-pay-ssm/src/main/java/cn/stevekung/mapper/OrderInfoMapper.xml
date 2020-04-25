@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stevekung.mapper.OrderInfoMapper">
+    <insert id="addOrderInfos" parameterType="OrderInfo">
+        insert into qfsc.t_order_info (order_id, pid, pcount) values
+         <foreach collection="list" item="orderInfo" separator=",">
+        (#{orderInfo.orderId}, #{orderInfo.pid}, #{orderInfo.pcount})
+        </foreach>
+    </insert>
+
+    <select id="getOrderInfosByOrderId" resultType="OrderInfo">
+        select * from qfsc.t_order_info WHERE order_id = #{orderId};
+    </select>
+
+</mapper>

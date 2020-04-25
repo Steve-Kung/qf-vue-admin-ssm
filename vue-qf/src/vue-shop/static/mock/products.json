@@ -1,0 +1,24 @@
+{
+  "products": [{
+    "id": 1,
+    "pid": 1001,
+    "pname": "p30",
+    "price": 6899,
+    "pimg": "../../static/p30.jpg"
+  },
+    {
+      "id": 2,
+      "pid": 1002,
+      "pname": "iphone",
+      "price": 5899,
+      "pimg": "../../static/iphone.jpg"
+    },
+    {
+      "id": 3,
+      "pid": 1003,
+      "pname": "nokia",
+      "price": 599,
+      "pimg": "../../static/nokia.jpg"
+    }
+  ]
+}

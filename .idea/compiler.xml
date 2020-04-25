@@ -11,9 +11,9 @@
         <module name="wxpaydemo" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
       <module name="vuessm" target="1.5" />
-      <module name="wx-pay-ssm" target="1.7" />
+      <module name="wx-pay-ssm" target="1.8" />
       <module name="wxpaydemo" target="1.5" />
     </bytecodeTargetLevel>
   </component>
